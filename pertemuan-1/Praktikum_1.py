@@ -5,7 +5,7 @@
 
 
 #membuka file dalam mode read("r")
-with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
+with open("pertemuan-1/data_mahasiswa.txt", "r", encoding="utf-8") as file:
     isi_file = file.read()
 
 
@@ -17,7 +17,7 @@ print("Jumlah Baris", isi_file.count("\n")+1)
 
 print("===Membaca per Baris===")
 jumlah_baris = 0
-with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
+with open("pertemuan-1/data_mahasiswa.txt", "r", encoding="utf-8") as file:
     for baris in file:
         jumlah_baris +=1 
         baris = baris.strip()
@@ -29,7 +29,7 @@ with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
 #Latihan dasar 2 : Parsing baris menjadi kolom data
 #===============================================
 
-with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
+with open("pertemuan-1/data_mahasiswa.txt", "r", encoding="utf-8") as file:
     for baris in file:
         baris = baris.strip()
         nim,nama,nilai = baris.split(",")
@@ -44,7 +44,7 @@ with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
 data_list = []
 
 
-with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
+with open("pertemuan-1/data_mahasiswa.txt", "r", encoding="utf-8") as file:
     for baris in file:
         baris = baris.strip()
         nim,nama,nilai = baris.split(",")
@@ -67,7 +67,7 @@ print("Contoh Record Pertama :", data_list[0])
 
 data_dict = {}
 
-with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
+with open("pertemuan-1/data_mahasiswa.txt", "r", encoding="utf-8") as file:
     for baris in file:
         baris = baris.strip()
         nim,nama,nilai = baris.split(",")
