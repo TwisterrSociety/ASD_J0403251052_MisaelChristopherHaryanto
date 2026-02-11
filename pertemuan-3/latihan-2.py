@@ -1,4 +1,7 @@
-class CircularNode:
+# ===== LATIHAN 2 =====
+# Search pada Circular Linked List
+
+class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -8,14 +11,16 @@ class CircularLinkedList:
         self.head = None
 
     def append(self, data):
-        new_node = CircularNode(data)
+        new_node = Node(data)
         if not self.head:
             self.head = new_node
             new_node.next = self.head
             return
+
         temp = self.head
         while temp.next != self.head:
             temp = temp.next
+
         temp.next = new_node
         new_node.next = self.head
 
@@ -34,3 +39,12 @@ class CircularLinkedList:
                 break
 
         print(f"Elemen {key} tidak ditemukan dalam Circular Linked List.")
+
+
+# ===== MAIN PROGRAM =====
+cll = CircularLinkedList()
+
+for i in [3, 7, 12, 19, 25]:
+    cll.append(i)
+
+cll.search(12)
