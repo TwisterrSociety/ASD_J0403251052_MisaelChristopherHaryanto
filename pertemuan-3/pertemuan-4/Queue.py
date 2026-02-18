@@ -23,6 +23,20 @@ class QueueLL:
         self.rear.next = nodeBaru # Sambungkan node terakhir saat ini ke node baru
         self.rear = nodeBaru      # Pindahkan label 'rear' ke node baru
         
+    def dequeue(self):
+        if self.front is None: # Cek apakah queue kosong
+            print("Queue kosong, tidak ada yang bisa didequeue")
+            return None
+        
+        data_terdequeue = self.front.data # Simpan data yang akan dikeluarkan
+        self.front = self.front.next       # Geser front ke node berikutnya
+        
+        # Jika setelah dequeue queue menjadi kosong, pastikan rear juga di-reset
+        if self.front is None:
+            self.rear = None
+        
+        return data_terdequeue
+
     def tampilkan(self):
         current = self.front
         print("Isi Queue saat ini: ", end="")
